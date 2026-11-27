@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphia Labs - Katalog Novel & Penerbitan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef4ff',
+                            100: '#d9e5ff',
+                            600: '#1e40af',
+                            700: '#133880',
+                            800: '#0f2b66',
+                            900: '#091c44',
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#f7f3eb',
+                            200: '#efe6d5',
+                            800: '#5c4b37'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-900 text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex justify-between items-center px-6 sm:px-12">
+        <div class="hidden sm:block">📚 Rilis Novel Baru Berjudul Kitab Puisi Pada Akhirnya!</div>
+        <div class="mx-auto sm:mx-0 flex items-center space-x-4">
+            <span><i class="fa-solid fa-truck-fast text-yellow-400 mr-1"></i>Ongkir Melalui Jne</span>
+            <span class="border-l border-brand-700 pl-4"><i class="fa-solid fa-headset mr-1"></i> CS 24/7 hubungi Chat Admin</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-header border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- BRAND LOGO -->
+                <a href="#" onclick="showSection('home')" class="flex items-center gap-3 group">
+                    <img src="LogoGraphiaLabs.jpg" onerror="this.src='https://placehold.co/100x100/0f2b66/ffffff?text=G'" alt="Graphia Labs" class="w-10 h-10 rounded-xl shadow-lg border border-white/20 drop-shadow-md hover:scale-105 transition-transform duration-300">
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-wider text-brand-900 leading-tight">GRAPHIA</span>
+                        <span class="font-bold text-xs tracking-widest text-brand-600">LABS</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAVIGATION LINKS -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-5 text-sm font-semibold text-slate-700">
+                    <button onclick="showSection('home')" class="hover:text-brand-700 px-3 py-2 rounded-lg transition hover:bg-slate-100">Beranda</button>
+                    <button onclick="showSection('catalog')" class="hover:text-brand-700 px-3 py-2 rounded-lg transition hover:bg-slate-100">Katalog Novel</button>
+                    <button onclick="showSection('terbit')" class="hover:text-brand-700 px-3 py-2 rounded-lg transition hover:bg-slate-100 flex items-center gap-1.5 text-brand-800">
+                        <i class="fa-solid fa-feather-pointed text-amber-500"></i> Paket Terbit
+                    </button>
+                    <button onclick="showSection('certificate')" class="hover:text-brand-700 px-3 py-2 rounded-lg transition hover:bg-slate-100 flex items-center gap-1.5"><i class="fa-solid fa-certificate text-amber-500"></i> Sertifikat Graphia Labs</button>
+                    <div class="relative group">
+                        <button onclick="openChatModal()" class="hover:text-brand-700 px-3 py-2 rounded-lg transition hover:bg-slate-100 flex items-center gap-1.5">
+                            <i class="fa-regular fa-comments text-brand-600"></i> Kontak & Bantuan <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+                        </button>
+                        <div class="hidden group-hover:block absolute right-0 mt-1 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 z-50 text-left">
+                            <div class="text-xs font-extrabold text-brand-900 mb-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-headset text-brand-600"></i> Kontak & Bantuan
+                            </div>
+                            <div class="flex flex-col gap-1.5 mb-3">
+                                <button onclick="openChatModal()" class="w-full text-left text-xs font-semibold text-slate-700 hover:text-brand-800 hover:bg-slate-100 px-2.5 py-1.5 rounded-lg transition flex items-center gap-2">
+                                    <i class="fa-regular fa-comments text-brand-600"></i> Live Chat Admin
+                                </button>
+                                <a href="https://wa.me/message/T4YRUJWSOJTSH1" target="_blank" class="w-full text-left text-xs font-semibold text-emerald-700 hover:bg-emerald-50 px-2.5 py-1.5 rounded-lg transition flex items-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-emerald-600"></i> WhatsApp Official
+                                </a>
+                            </div>
+                            <div class="pt-2.5 border-t border-slate-200">
+                                <div class="text-[11px] font-bold text-brand-800 mb-1 flex items-center gap-1">
+                                    <i class="fa-solid fa-location-dot text-rose-500"></i> Alamat:
+                                </div>
+                                <p class="text-[11px] text-slate-600 font-normal leading-relaxed">
+                                    Jalan Raya Mataram Tanjung BTN Singgahsana Reborn Blok Mandalika No. 5, Tamansari, Gunungsari, Kabupaten Lombok Barat, Nusa Tenggara Barat
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- RIGHT ACTION BUTTONS -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <div id="user-auth-btn-container" class="flex items-center gap-2"></div>
+
+                    <button onclick="toggleCartDrawer()" class="relative bg-brand-50 hover:bg-brand-100 text-brand-800 p-2.5 rounded-xl transition border border-brand-100">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white scale-0 transition-transform duration-300">0</span>
+                    </button>
+
+                    <button onclick="requestAdminAccess()" class="bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold px-3 sm:px-4 py-2.5 rounded-xl shadow-md transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock text-yellow-400"></i>
+                        <span class="hidden sm:inline">Portal Admin</span>
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-brand-700 p-2 text-xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION MENU -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <button onclick="showSection('home'); toggleMobileMenu();" class="block w-full text-left font-semibold py-2.5 px-3 rounded-lg hover:bg-slate-100">Beranda</button>
+            <button onclick="showSection('catalog'); toggleMobileMenu();" class="block w-full text-left font-semibold py-2.5 px-3 rounded-lg hover:bg-slate-100">Katalog Novel</button>
+            <button onclick="showSection('terbit'); toggleMobileMenu();" class="block w-full text-left font-semibold py-2.5 px-3 rounded-lg hover:bg-slate-100 text-brand-800"><i class="fa-solid fa-feather-pointed text-amber-500 mr-1.5"></i>Paket Terbit</button>
+            <button onclick="showSection('certificate'); toggleMobileMenu();" class="block w-full text-left font-semibold py-2.5 px-3 rounded-lg hover:bg-slate-100"><i class="fa-solid fa-certificate text-amber-500 mr-1.5"></i>Sertifikat Graphia Labs</button>
+            <div class="px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <div class="font-bold text-xs text-brand-900">Kontak & Bantuan</div>
+                <button onclick="openChatModal(); toggleMobileMenu();" class="block w-full text-left font-semibold text-xs py-1.5 px-2.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-brand-800">
+                    <i class="fa-regular fa-comments mr-1.5 text-brand-600"></i>Live Chat Admin
+                </button>
+                <div class="text-[11px] text-slate-600 leading-relaxed flex items-start gap-1.5 pt-1">
+                    <i class="fa-solid fa-location-dot text-rose-500 mt-0.5 shrink-0"></i>
+                    <span>Jalan Raya Mataram Tanjung BTN Singgahsana Reborn Blok Mandalika No. 5, Tamansari, Gunungsari, Kabupaten Lombok Barat, Nusa Tenggara Barat</span>
+                </div>
+            </div>
+            <div id="mobile-auth-container" class="pt-2 border-t"></div>
+        </div>
+    </header>
+
+    <!-- CONTAINER MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- SECTION 1: HOME & HERO -->
+        <section id="sec-home" class="transition-all duration-300">
+            <div class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white py-16 lg:py-24 overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-left">
+                            <div class="animate-fade-in-up">
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-600/50 border border-brand-400/30 text-yellow-300">
+                                    <i class="fa-solid fa-sparkles"></i> DISCOVER. READ. GROW.
+                                </span>
+                            </div>
+
+                            <h1 class="animate-fade-in-up delay-100 font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                                Books for every mind & moment.
+                            </h1>
+
+                            <p class="animate-fade-in-up delay-200 text-slate-200 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                                Your next favorite story is just a page away. Temukan karya-karya novel eksklusif terbaik dari penulis tanah air & internasional atau terbitkan naskah impianmu bersama Graphia Labs.
+                            </p>
+
+                            <div class="animate-fade-in-up delay-300 flex flex-wrap items-stretch sm:items-center justify-start gap-3 pt-2">
+                                <button onclick="showSection('catalog')" class="bg-amber-500 hover:bg-amber-600 text-brand-900 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-amber-500/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <span>Lihat Katalog Novel</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <button onclick="showSection('terbit')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm sm:text-base">
+                                    <i class="fa-solid fa-feather-pointed"></i>
+                                    <span>Paket Terbit Buku</span>
+                                </button>
+                                <button onclick="showSection('certificate')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-5 py-3.5 rounded-xl transition text-sm sm:text-base text-center flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-certificate text-amber-400"></i>
+                                    <span>Sertifikat Graphia Labs</span>
+                                </button>
+                            </div>
+
+                            <div class="animate-fade-in-up delay-400 pt-6 border-t border-brand-700/60 flex items-center justify-start gap-4 text-xs text-slate-300">
+                                <div class="flex -space-x-2">
+                                    <img class="w-8 h-8 rounded-full border-2 border-brand-800" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop" alt="User">
+                                    <img class="w-8 h-8 rounded-full border-2 border-brand-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="User">
+                                    <img class="w-8 h-8 rounded-full border-2 border-brand-800" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="User">
+                                </div>
+                                <div>
+                                    <div class="text-yellow-400 font-bold"><i class="fa-solid fa-star"></i> 4.9/5.0 Rating Pembaca</div>
+                                    <span class="text-slate-300">Lebih dari 10.000+ novel terkirim</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                            <div class="relative w-full max-w-sm animate-float">
+                                <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-amber-400 to-brand-500 blur-xl opacity-40"></div>
+                                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-brand-900">
+                                    <img src="1000231023.png" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop'" alt="Featured Novel" class="w-full h-[400px] object-cover">
+                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-6 text-white">
+                                        <span class="bg-amber-500 text-brand-900 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded">Bestseller Minggu Ini</span>
+                                        <h3 class="text-xl font-bold font-serif mt-2">Kitab Puisi Pada Akhirnya</h3>
+                                        <p class="text-xs text-slate-300">Matt Haig • Rp 60.000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Proposition Badges -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+                <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center sm:text-left">
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-truck"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">Pengiriman Cepat</h4>
+                            <p class="text-xs text-slate-500">Aman dengan bubble wrap tebal</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">100% Original</h4>
+                            <p class="text-xs text-slate-500">Langsung dari penerbit resmi</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-wallet"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">Pembayaran Mudah</h4>
+                            <p class="text-xs text-slate-500">Transfer, DANA, GoPay, OVO & QRIS</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-sheet-plastic"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800">Auto Sync Order</h4>
+                            <p class="text-xs text-slate-500">Terintegrasi Google Sheets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IKLAN PROMOSI BERJALAN (RUNNING PROMO BANNER) -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+                <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-brand-900 rounded-3xl p-4 sm:p-5 shadow-xl border border-brand-700 overflow-hidden relative">
+                    <div class="flex items-center justify-between mb-3 px-2">
+                        <span class="inline-flex items-center gap-2 bg-amber-400 text-brand-900 text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                            <i class="fa-solid fa-fire"></i> Promo & Rilis Buku Baru
+                        </span>
+                        <span class="text-[11px] text-brand-200 hidden sm:inline"><i class="fa-solid fa-circle-pause mr-1"></i>Arahkan kursor untuk menjeda</span>
+                    </div>
+                    <div class="overflow-hidden w-full">
+                        <div id="home-running-promo-track" class="animate-marquee-promo gap-5">
+                            <!-- Diisi via JavaScript renderRunningPromos() -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Highlights -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Browse by category</span>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-900 mt-1">Temukan Genremu</h2>
+                    </div>
+                    <button onclick="showSection('catalog')" class="text-sm font-bold text-brand-700 hover:text-brand-900 flex items-center gap-1">
+                        Lihat Semua <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4" id="home-category-pills"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CATALOG & PRODUCTS -->
+        <section id="sec-catalog" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 transition-all duration-300">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-brand-900">Katalog Novel Graphia Labs</h2>
+                    <p class="text-slate-500 text-sm mt-1">Pilih novel favorit Anda dan pesan secara instan.</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <div class="relative flex-grow sm:w-64">
+                        <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Cari judul novel / penulis..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                    </div>
+                    
+                    <select id="category-select" onchange="filterProducts()" class="bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:ring-2 focus:ring-brand-600 outline-none">
+                        <option value="ALL">Semua Kategori</option>
+                        <option value="Fiksi">Fiksi</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Self-Help">Self-Help</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Mystery">Mystery / Thriller</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- SECTION 2B: KATALOG PAKET TERBIT BUKU -->
+        <section id="sec-terbit" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 transition-all duration-300">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-100 text-brand-800 uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-feather-pointed text-amber-500"></i> Penerbitan Resmi Graphia Labs
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-900">Pilihan Paket Terbit Naskah</h2>
+                <p class="text-slate-600 text-sm mt-2">Wujudkan impian menerbitkan buku karyamu sendiri dengan fasilitas desain, QRCBN, cetak, dan promosi marketplace.</p>
+            </div>
+
+            <!-- Grid Kartu Paket Terbit -->
+            <div id="terbit-packages-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"></div>
+        </section>
+
+        <!-- SECTION 3: SERTIFIKAT GRAPHIA LABS -->
+        <section id="sec-certificate" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 transition-all duration-300">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <div class="w-16 h-16 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 border border-amber-200">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-900">Sertifikat Resmi Graphia Labs</h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2">Legalitas, penghargaan, dan sertifikasi resmi penerbitan Graphia Labs. Klik pada foto sertifikat untuk memperbesar (zoom).</p>
+                </div>
+
+                <!-- Grid Foto Sertifikat & Deskripsi -->
+                <div id="certificates-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROTECTED ADMIN PANEL -->
+        <section id="sec-admin" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 transition-all duration-300">
+            <div class="bg-brand-900 rounded-3xl p-6 sm:p-8 text-white mb-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-bold text-yellow-400 uppercase tracking-widest">
+                        <i class="fa-solid fa-shield-halved"></i> Dashboard Administrator
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-1">Graphia Labs Control Center</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-1">Kelola stok novel, katalog paket terbit, live chat konsumen, dan log Google Sheets terpisah.</p>
+                </div>
+                <button onclick="logoutAdmin()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition self-start md:self-auto flex items-center gap-2">
+                    <i class="fa-solid fa-right-from-bracket"></i> Keluar Admin
+                </button>
+            </div>
+
+            <!-- Admin Nav Tabs -->
+            <div class="flex flex-wrap gap-2 mb-8 border-b border-slate-200 pb-3">
+                <button onclick="switchAdminTab('products')" id="tab-btn-products" class="px-4 py-2 rounded-xl text-sm font-bold bg-brand-800 text-white transition">
+                    <i class="fa-solid fa-book mr-1.5"></i> Katalog Novel
+                </button>
+                <button onclick="switchAdminTab('terbit-pkg')" id="tab-btn-terbit-pkg" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-feather-pointed text-amber-500 mr-1.5"></i> Katalog Paket Terbit
+                </button>
+                <button onclick="switchAdminTab('sheets')" id="tab-btn-sheets" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-table text-emerald-500 mr-1.5"></i> Log Sheets Novel
+                </button>
+                <button onclick="switchAdminTab('sheets-terbit')" id="tab-btn-sheets-terbit" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-file-signature text-purple-500 mr-1.5"></i> Log Sheets Pembeli Terbit
+                </button>
+                <button onclick="switchAdminTab('promo-banner')" id="tab-btn-promo-banner" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-bullhorn text-rose-500 mr-1.5"></i> Iklan Promosi Beranda
+                </button>
+                <button onclick="switchAdminTab('livechat')" id="tab-btn-livechat" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition relative">
+                    <i class="fa-solid fa-comments text-amber-400 mr-1.5"></i> Live Chat Konsumen
+                    <span id="admin-chat-unread-badge" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold">!</span>
+                </button>
+                <button onclick="switchAdminTab('reports')" id="tab-btn-reports" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-chart-line text-blue-400 mr-1.5"></i> Laporan Penjualan
+                </button>
+                <button onclick="switchAdminTab('certificates')" id="tab-btn-certificates" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-certificate text-amber-500 mr-1.5"></i> Sertifikat Graphia Labs
+                </button>
+                <button onclick="switchAdminTab('payment-methods')" id="tab-btn-payment-methods" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-wallet text-amber-400 mr-1.5"></i> Metode Pembayaran
+                </button>
+            </div>
+
+            <!-- TAB 1: PRODUCTS (NOVEL) -->
+            <div id="admin-tab-products" class="space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 id="form-product-title" class="text-lg font-bold text-brand-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-plus text-brand-600"></i> Tambah / Update Produk Novel
+                    </h3>
+                    <form id="add-product-form" onsubmit="handleSaveProduct(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <input type="hidden" id="adm-edit-id" value="">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Judul Novel</label>
+                            <input type="text" id="adm-title" required placeholder="Contoh: Sang Pemimpi" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Penulis</label>
+                            <input type="text" id="adm-author" required placeholder="Andrea Hirata" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Kategori Novel</label>
+                            <select id="adm-category" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                                <option value="Fiksi">Fiksi</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Self-Help">Self-Help</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Mystery">Mystery</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Harga (Rp)</label>
+                            <input type="number" id="adm-price" required placeholder="85000" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Stok Awal</label>
+                            <input type="number" id="adm-stock" required placeholder="20" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Status Novel</label>
+                            <select id="adm-status" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600 font-semibold text-slate-700">
+                                <option value="sale">sale</option>
+                                <option value="sold-out">sold-out</option>
+                                <option value="diskon">diskon</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-3">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">URL Gambar (Google Drive / Direct Link)</label>
+                            <input type="url" id="adm-image" required placeholder="https://drive.google.com/file/d/..." class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div class="md:col-span-3">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Deskripsi Novel *</label>
+                            <textarea id="adm-desc" required rows="3" placeholder="Masukkan ringkasan atau sinopsis singkat novel..." class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600"></textarea>
+                        </div>
+                        <div class="md:col-span-3 flex justify-end gap-2">
+                            <button type="button" id="btn-cancel-edit" onclick="resetProductForm()" class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                                Batal
+                            </button>
+                            <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-save"></i> <span id="btn-submit-text">Simpan Novel Ke Katalog</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-sm text-slate-700">Daftar Produk Novel & Kontrol Stok</div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-bold">
+                                <tr>
+                                    <th class="p-3">Cover</th>
+                                    <th class="p-3">Judul Novel</th>
+                                    <th class="p-3">Kategori</th>
+                                    <th class="p-3">Harga</th>
+                                    <th class="p-3 text-center">Status</th>
+                                    <th class="p-3 text-center">Stok Available</th>
+                                    <th class="p-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-products-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 1B: KATALOG PAKET TERBIT -->
+            <div id="admin-tab-terbit-pkg" class="hidden space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 id="form-terbit-title" class="text-lg font-bold text-brand-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-feather-pointed text-amber-500"></i> Tambah / Edit Paket Terbit Buku
+                    </h3>
+                    <form id="terbit-pkg-form" onsubmit="handleSaveTerbitPkg(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <input type="hidden" id="trb-edit-id" value="">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Paket Terbit *</label>
+                            <input type="text" id="trb-name" required placeholder="Contoh: Paket Biasa / Paket Luar Biasa / Paket Mantap" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Harga Asli / Coret (Rp)</label>
+                            <input type="number" id="trb-orig-price" placeholder="575000 (Kosongkan jika tidak ada)" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Label Diskon (Opsional)</label>
+                            <input type="text" id="trb-discount-label" placeholder="Contoh: Diskon 10%" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Harga Akhir / Jual (Rp) *</label>
+                            <input type="number" id="trb-price" required placeholder="520000" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Foto / Banner Paket (Upload File atau URL Link)</label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <input type="file" id="trb-image-file" accept="image/*" class="text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-800">
+                                <input type="url" id="trb-image-url" placeholder="Atau masukkan URL foto..." class="flex-grow px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Daftar Fasilitas / Deskripsi Paket (Pisahkan tiap poin dengan baris baru / Enter) *</label>
+                            <textarea id="trb-features" required rows="5" placeholder="Naskah Fix dari Penulis&#10;QRCBN&#10;Desain Cover Premium&#10;Desain Layout Premium&#10;Desain Bookmark&#10;2 eksemplar Buku Terbit&#10;E-Sertifikat&#10;Flyer Promosi" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600"></textarea>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Ketentuan Naskah (Maksimal Kata & Halaman)</label>
+                                <textarea id="trb-specs" rows="2" placeholder="Maksimal 40.000 kata&#10;Maksimal 250 halaman ukuran A5" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Catatan Promo / Marketplace</label>
+                                <input type="text" id="trb-promo-note" placeholder="Dipromosikan di semua marketplace penerbit" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 flex justify-end gap-2 pt-2">
+                            <button type="button" id="btn-cancel-trb-edit" onclick="resetTerbitPkgForm()" class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                                Batal Edit
+                            </button>
+                            <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-save"></i> <span id="btn-submit-trb-text">Simpan Paket Terbit</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tabel Daftar Paket Terbit Admin -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-sm text-slate-700">Daftar Katalog Paket Terbit</div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-bold">
+                                <tr>
+                                    <th class="p-3">Foto</th>
+                                    <th class="p-3">Nama Paket</th>
+                                    <th class="p-3">Harga & Diskon</th>
+                                    <th class="p-3">Deskripsi & Ketentuan</th>
+                                    <th class="p-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-terbit-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB PROMO BANNER: KELOLA IKLAN PROMOSI BERJALAN -->
+            <div id="admin-tab-promo-banner" class="hidden space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 id="form-promo-title" class="text-lg font-bold text-brand-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-bullhorn text-rose-500"></i> Tambah / Edit Iklan Promosi Berjalan di Beranda
+                    </h3>
+                    <form id="promo-banner-form" onsubmit="handleSavePromoBanner(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <input type="hidden" id="promo-edit-id" value="">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Label Badge (Contoh: BUKU BARU / PROMO SPESIAL) *</label>
+                            <input type="text" id="promo-badge" required placeholder="BUKU BARU" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Tulisan Judul Buku Baru / Promo *</label>
+                            <input type="text" id="promo-title" required placeholder="Contoh: Kitab Puisi Pada Akhirnya - Edisi Tanda Tangan" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Harga Asli / Sebelum Diskon (Rp)</label>
+                            <input type="number" id="promo-orig-price" placeholder="85000 (Opsional)" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Label Diskon (Contoh: Diskon 25%)</label>
+                            <input type="text" id="promo-discount" placeholder="Diskon 25%" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Harga Promo / Akhir (Rp) *</label>
+                            <input type="number" id="promo-price" required placeholder="60000" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div class="md:col-span-3">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Foto Buku / Iklan (Upload File atau URL Link) *</label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <input type="file" id="promo-image-file" accept="image/*" class="text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-800">
+                                <input type="url" id="promo-image-url" placeholder="Atau masukkan URL foto buku..." class="flex-grow px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 flex justify-end gap-2">
+                            <button type="button" id="btn-cancel-promo-edit" onclick="resetPromoForm()" class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                                Batal Edit
+                            </button>
+                            <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-save"></i> <span id="btn-submit-promo-text">Simpan Iklan Promosi</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-sm text-slate-700">Daftar Iklan Promosi Berjalan di Beranda</div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-bold">
+                                <tr>
+                                    <th class="p-3">Foto</th>
+                                    <th class="p-3">Badge</th>
+                                    <th class="p-3">Judul Buku Baru</th>
+                                    <th class="p-3">Harga & Diskon</th>
+                                    <th class="p-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-promo-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: ADMIN LIVE CHAT DASHBOARD -->
+            <div id="admin-tab-livechat" class="hidden space-y-6">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden grid grid-cols-1 md:grid-cols-3 h-[550px]">
+                    <div class="border-r border-slate-200 bg-slate-50 p-4 overflow-y-auto">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="font-bold text-xs uppercase text-slate-500 tracking-wider">Daftar Konsumen Chat</h4>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">Live Sync</span>
+                        </div>
+                        <div id="admin-chat-users-list" class="space-y-2"></div>
+                    </div>
+
+                    <div class="md:col-span-2 flex flex-col h-full bg-white">
+                        <div id="admin-chat-header" class="p-4 bg-brand-900 text-white flex justify-between items-center border-b">
+                            <div>
+                                <h4 id="active-chat-name" class="font-bold text-sm">Pilih Konsumen</h4>
+                                <span id="active-chat-contact" class="text-xs text-brand-200">Email/No HP: -</span>
+                            </div>
+                            <button id="btn-delete-active-chat" onclick="deleteAdminChatUser(activeChatEmail)" class="hidden bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 shadow">
+                                <i class="fa-solid fa-trash-can"></i> Hapus Chat
+                            </button>
+                        </div>
+                        <div id="admin-chat-box" class="flex-grow p-4 overflow-y-auto space-y-3 bg-slate-50 text-xs">
+                            <div class="text-center text-slate-400 py-16">Pilih salah satu konsumen di samping untuk mulai membalas pesan.</div>
+                        </div>
+                        <form onsubmit="handleAdminSendChat(event)" class="p-3 border-t bg-white flex gap-2">
+                            <input type="text" id="admin-chat-input" placeholder="Balas pesan konsumen..." class="flex-grow px-3 py-2 bg-slate-100 rounded-xl text-xs outline-none focus:ring-1 focus:ring-brand-600">
+                            <button type="submit" class="bg-brand-800 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-brand-900 transition">
+                                <i class="fa-solid fa-paper-plane mr-1"></i> Kirim Balasan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: GOOGLE SHEETS PEMBELI NOVEL -->
+            <div id="admin-tab-sheets" class="hidden space-y-4">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-emerald-800 text-sm">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-excel text-3xl text-emerald-600"></i>
+                        <div>
+                            <div class="font-bold">Google Sheets Integration Active (Pesanan Novel)</div>
+                            <div class="text-xs text-emerald-700">Semua pesanan novel otomatis tersinkronisasi ke spreadsheet admin & dilengkapi bukti pembayaran.</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 shrink-0">
+                        <button onclick="clearAllNovelOrders()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                            <i class="fa-solid fa-trash-can"></i> Hapus Semua Log
+                        </button>
+                        <button onclick="downloadSpreadsheetCSV()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download CSV Novel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-800 text-white font-bold text-sm flex justify-between items-center">
+                        <span><i class="fa-solid fa-table mr-2 text-emerald-400"></i> Live Orders Spreadsheet (Katalog Novel)</span>
+                        <span class="text-xs font-mono text-emerald-400">Status: Connected</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-slate-100 border-b border-slate-300 text-slate-700 font-bold">
+                                <tr>
+                                    <th class="p-3 border-r">Timestamp</th>
+                                    <th class="p-3 border-r">Order ID</th>
+                                    <th class="p-3 border-r">Nama Pembeli</th>
+                                    <th class="p-3 border-r">WhatsApp</th>
+                                    <th class="p-3 border-r">Alamat Pengiriman</th>
+                                    <th class="p-3 border-r">Buku Dibeli</th>
+                                    <th class="p-3 border-r">Total (Rp)</th>
+                                    <th class="p-3 border-r">Metode Bayar</th>
+                                    <th class="p-3 border-r text-center">Bukti Bayar</th>
+                                    <th class="p-3 text-center">Status & Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-sheets-tbody" class="divide-y divide-slate-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3B: GOOGLE SHEETS KHUSUS PEMBELI TERBIT -->
+            <div id="admin-tab-sheets-terbit" class="hidden space-y-4">
+                <div class="bg-purple-50 border border-purple-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-purple-900 text-sm">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-signature text-3xl text-purple-600"></i>
+                        <div>
+                            <div class="font-bold">Log Google Sheets Khusus Pembeli Paket Terbit</div>
+                            <div class="text-xs text-purple-700">Mencatat pendaftar paket penerbitan (Paket Biasa, Paket Luar Biasa, Paket Mantap) beserta judul naskah dan bukti bayar.</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 shrink-0">
+                        <button onclick="clearAllTerbitOrders()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                            <i class="fa-solid fa-trash-can"></i> Hapus Semua Log
+                        </button>
+                        <button onclick="downloadTerbitSpreadsheetCSV()" class="bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download CSV Pembeli Terbit
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-brand-900 text-white font-bold text-sm flex justify-between items-center">
+                        <span><i class="fa-solid fa-table mr-2 text-amber-400"></i> Live Spreadsheet Pembeli Paket Terbit</span>
+                        <span class="text-xs font-mono text-emerald-400">Status: Connected</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-slate-100 border-b border-slate-300 text-slate-700 font-bold">
+                                <tr>
+                                    <th class="p-3 border-r">Timestamp</th>
+                                    <th class="p-3 border-r">Order ID</th>
+                                    <th class="p-3 border-r">Nama Penulis</th>
+                                    <th class="p-3 border-r">WhatsApp</th>
+                                    <th class="p-3 border-r">Judul Naskah</th>
+                                    <th class="p-3 border-r">Paket Dipilih</th>
+                                    <th class="p-3 border-r">Total (Rp)</th>
+                                    <th class="p-3 border-r">Metode Bayar</th>
+                                    <th class="p-3 border-r text-center">Bukti Bayar</th>
+                                    <th class="p-3 text-center">Status & Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-sheets-terbit-tbody" class="divide-y divide-slate-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: REPORTS -->
+            <div id="admin-tab-reports" class="hidden space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <div class="text-xs font-bold text-slate-400 uppercase">Total Omzet (Novel + Paket Terbit)</div>
+                        <div id="report-total-revenue" class="text-3xl font-extrabold text-brand-900 mt-2">Rp 0</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <div class="text-xs font-bold text-slate-400 uppercase">Total Transaksi Sukses</div>
+                        <div id="report-total-orders" class="text-3xl font-extrabold text-brand-900 mt-2">0 Pesanan</div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <div class="text-xs font-bold text-slate-400 uppercase">Paket Terbit Terlaris</div>
+                        <div id="report-top-novel" class="text-xl font-bold text-brand-900 mt-2 truncate">Paket Luar Biasa</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CERT: KELOLA SERTIFIKAT GRAPHIA LABS -->
+            <div id="admin-tab-certificates" class="hidden space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 id="form-cert-title" class="text-lg font-bold text-brand-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-amber-500"></i> Tambah / Edit Sertifikat Graphia Labs
+                    </h3>
+                    <form id="cert-form" onsubmit="handleSaveCertificate(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="hidden" id="cert-edit-id" value="">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Judul Sertifikat *</label>
+                            <input type="text" id="cert-title" required placeholder="Contoh: Sertifikat Resmi Penerbit Graphia Labs" class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Foto Sertifikat (Upload File atau URL Link) *</label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <input type="file" id="cert-image-file" accept="image/*" class="text-xs text-slate-500 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-800">
+                                <input type="url" id="cert-image-url" placeholder="Atau URL foto sertifikat..." class="flex-grow px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600">
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Deskripsi Sertifikat *</label>
+                            <textarea id="cert-desc" required rows="3" placeholder="Tuliskan penjelasan/deskripsi lengkap mengenai sertifikat ini..." class="w-full px-3 py-2 border rounded-xl text-sm outline-none focus:border-brand-600"></textarea>
+                        </div>
+                        <div class="md:col-span-2 flex justify-end gap-2">
+                            <button type="button" id="btn-cancel-cert-edit" onclick="resetCertForm()" class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold px-4 py-2.5 rounded-xl text-sm transition">
+                                Batal Edit
+                            </button>
+                            <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-save"></i> <span id="btn-submit-cert-text">Simpan Sertifikat</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-50 border-b border-slate-200 font-bold text-sm text-slate-700">Daftar Sertifikat Graphia Labs</div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-bold">
+                                <tr>
+                                    <th class="p-3">Foto Sertifikat</th>
+                                    <th class="p-3">Judul Sertifikat</th>
+                                    <th class="p-3">Deskripsi</th>
+                                    <th class="p-3 text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adm-cert-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: PAYMENT METHODS -->
+            <div id="admin-tab-payment-methods" class="hidden space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 class="text-lg font-bold text-brand-900 mb-4">Pengaturan Metode Pembayaran</h3>
+                    <div class="space-y-4" id="payment-methods-admin-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-900 text-white pt-12 pb-8 border-t border-brand-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="LogoGraphiaLabs.jpg" onerror="this.src='https://placehold.co/100x100/0f2b66/ffffff?text=G'" alt="Graphia Logo G" class="w-10 h-10 object-contain rounded-xl shadow-md border border-white/20">
+                    <span class="font-bold text-xl tracking-wider">GRAPHIA LABS</span>
+                </div>
+                <p class="text-slate-300 text-xs leading-relaxed">Graphia Labs adalah platform toko buku, novel online & layanan penerbitan terpercaya yang menghadirkan bacaan berkualitas tinggi.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-yellow-400 mb-4">Navigasi Cepat</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li><a href="#" onclick="showSection('home')" class="hover:underline">Beranda</a></li>
+                    <li><a href="#" onclick="showSection('catalog')" class="hover:underline">Katalog Novel</a></li>
+                    <li><a href="#" onclick="showSection('terbit')" class="hover:underline">Paket Terbit Buku</a></li>
+                    <li><a href="#" onclick="showSection('certificate')" class="hover:underline">Sertifikat Graphia Labs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-yellow-400 mb-4">Layanan & Kategori</h4>
+                <ul class="space-y-2 text-xs text-slate-300">
+                    <li>Fiksi & Sastra</li>
+                    <li>Romance & Drama</li>
+                    <li>Paket Terbit Biasa, Luar Biasa & Mantap</li>
+                    <li>Self-Help & Fantasy</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm text-yellow-400 mb-4">Kontak & Bantuan</h4>
+                <a href="https://wa.me/message/T4YRUJWSOJTSH1" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition mb-4">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Chat Admin WhatsApp
+                </a>
+                <div class="text-xs text-slate-300 leading-relaxed flex items-start gap-2 pt-2 border-t border-brand-800">
+                    <i class="fa-solid fa-location-dot text-yellow-400 mt-1 shrink-0"></i>
+                    <span>Jalan Raya Mataram Tanjung BTN Singgahsana Reborn Blok Mandalika No. 5, Tamansari, Gunungsari, Kabupaten Lombok Barat, Nusa Tenggara Barat</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400 pt-6 border-t border-brand-800">
+            &copy; 2026 Graphia Labs. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- MODALS & DRAWERS -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleCartDrawer()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="p-6 bg-brand-900 text-white flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-yellow-400 text-xl"></i>
+                        <h3 class="font-bold text-lg">Keranjang Belanja</h3>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-slate-300 hover:text-white p-1"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div id="cart-items-container" class="flex-grow p-6 overflow-y-auto divide-y divide-slate-100"></div>
+                <div class="p-6 bg-slate-50 border-t border-slate-200 space-y-4">
+                    <div class="flex justify-between items-center text-slate-700 font-bold">
+                        <span>Total Pembayaran:</span>
+                        <span id="cart-total-price" class="text-xl text-brand-900">Rp 0</span>
+                    </div>
+                    <button id="cart-checkout-btn" onclick="openCheckoutModal()" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3.5 rounded-xl shadow-lg transition flex justify-center items-center gap-2">
+                        <span>Lanjut Ke Pembayaran</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL NOVEL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="text-2xl font-serif font-bold text-brand-900 mb-2">Lengkapi Detail Pesanan Novel</h3>
+            <p class="text-xs text-slate-500 mb-6">Data pesanan otomatis tersimpan ke Google Sheets & terhubung ke WhatsApp.</p>
+
+            <form onsubmit="processOrderPlacement(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Pemesan *</label>
+                    <input type="text" id="cust-name" required placeholder="Budi Santoso" class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp *</label>
+                    <input type="tel" id="cust-phone" required placeholder="08123456789" class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Alamat Lengkap Pengiriman *</label>
+                    <textarea id="cust-address" required rows="2" placeholder="Jl. Merdeka No. 12, Jakarta" class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Pilih Metode Pembayaran *</label>
+                    <select id="cust-payment-method" onchange="handlePaymentMethodChange()" required class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none font-semibold text-slate-700"></select>
+                    <div id="qris-note-info" class="hidden mt-2 p-2.5 bg-yellow-50 border border-yellow-200 rounded-xl text-xs text-amber-800 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-amber-600 text-sm"></i>
+                        <span>Silakan chat WA untuk pembayaran QRIS</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Upload Bukti Pembayaran (Opsional)</label>
+                    <input type="file" id="cust-proof-file" accept="image/*" class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-800">
+                    <div id="proof-preview-container" class="mt-2 hidden">
+                        <img id="proof-preview-img" src="" class="h-20 w-auto rounded border shadow-sm">
+                    </div>
+                </div>
+                <div class="pt-4 border-t flex justify-between items-center">
+                    <div class="text-xs text-slate-500">Total Bayar: <span id="checkout-total-val" class="text-base font-extrabold text-brand-900 block">Rp 0</span></div>
+                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl transition shadow-md flex items-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span>Pesan & Konfirmasi WA</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL PEMESANAN PAKET TERBIT -->
+    <div id="terbit-order-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <button onclick="closeTerbitOrderModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Formulir Penerbitan</span>
+            <h3 class="text-2xl font-serif font-bold text-brand-900 mt-1 mb-1">Pesan <span id="trb-modal-pkg-name" class="text-brand-600">Paket Terbit</span></h3>
+            <p class="text-xs text-slate-500 mb-5">Data otomatis masuk ke Log Google Sheets Khusus Pembeli Terbit & terhubung ke WhatsApp Admin.</p>
+
+            <form onsubmit="processTerbitOrderPlacement(event)" class="space-y-3.5">
+                <input type="hidden" id="trb-order-pkg-id">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Penulis / Pemesan *</label>
+                    <input type="text" id="trb-cust-name" required placeholder="Nama lengkap penulis..." class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Aktif *</label>
+                    <input type="tel" id="trb-cust-phone" required placeholder="08123456789" class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Judul Naskah / Genre Buku *</label>
+                    <input type="text" id="trb-cust-manuscript" required placeholder="Contoh: Senja di Ujung Kota (Novel Romance)" class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Alamat Pengiriman Bukti Terbit *</label>
+                    <textarea id="trb-cust-address" required rows="2" placeholder="Alamat lengkap pengiriman buku bukti terbit..." class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Pilih Metode Pembayaran *</label>
+                    <select id="trb-cust-payment" required class="w-full px-4 py-2.5 border rounded-xl text-sm outline-none font-semibold text-slate-700"></select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Upload Bukti Pembayaran (Opsional)</label>
+                    <input type="file" id="trb-cust-proof" accept="image/*" class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-800">
+                </div>
+                <div class="pt-4 border-t flex justify-between items-center">
+                    <div class="text-xs text-slate-500">Biaya Paket: <span id="trb-checkout-total-val" class="text-base font-extrabold text-brand-900 block">Rp 0</span></div>
+                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-3 rounded-xl transition shadow-md flex items-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> <span>Daftar & Konfirmasi WA</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative text-center">
+            <button onclick="closeAdminLoginModal()" class="absolute top-4 right-4 text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div class="w-14 h-14 bg-brand-50 text-brand-800 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4"><i class="fa-solid fa-user-shield"></i></div>
+            <h3 class="text-xl font-bold text-brand-900">Akses Admin Graphia Labs</h3>
+            <p class="text-xs text-slate-500 mt-1 mb-4">Masukkan password khusus admin.</p>
+            <form onsubmit="verifyAdminPassword(event)" class="space-y-4">
+                <input type="password" id="admin-pass-input" placeholder="Password Admin..." required class="w-full px-4 py-3 border rounded-xl text-center text-sm font-mono outline-none focus:ring-2 focus:ring-brand-600">
+                <p class="text-[11px] text-slate-400 italic">Password Admin: admin <code class="bg-slate-100 px-1 py-0.5 rounded font-bold"></code></p>
+                <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3 rounded-xl transition text-sm">Masuk Portal Admin</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL & REVIEW MODAL -->
+    <div id="product-detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl relative my-8 overflow-hidden flex flex-col md:flex-row">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 z-10 bg-white/80 rounded-full p-2 hover:bg-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div class="md:w-2/5 bg-slate-100 relative h-64 md:h-auto"><img id="detail-img" src="" class="w-full h-full object-cover"></div>
+            <div class="md:w-3/5 p-6 sm:p-8 flex flex-col max-h-[80vh] overflow-y-auto">
+                <span id="detail-category" class="text-xs font-bold text-brand-600 uppercase"></span>
+                <h2 id="detail-title" class="text-2xl font-serif font-bold text-brand-900 mt-1 mb-1"></h2>
+                <p id="detail-author" class="text-sm font-semibold text-slate-500 mb-4"></p>
+                <div id="detail-price" class="text-xl font-extrabold text-brand-900 mb-4 pb-4 border-b"></div>
+                <p id="detail-desc" class="text-xs text-slate-600 leading-relaxed mb-6"></p>
+                
+                <!-- Ulasan Pembaca & Form Tambah Ulasan -->
+                <div class="pt-4 border-t border-slate-200">
+                    <h4 class="font-bold text-sm text-slate-800 mb-3 flex items-center gap-1.5">
+                        <i class="fa-solid fa-star text-yellow-400"></i> Ulasan Pembaca
+                    </h4>
+                    <div id="detail-reviews" class="space-y-3 mb-6"></div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <h5 class="text-xs font-bold text-brand-900 mb-2">Tulis Ulasan & Kepuasan Anda</h5>
+                        <form onsubmit="handleAddReview(event)">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xs text-slate-600 font-semibold">Rating Bintang:</span>
+                                <div id="star-rating-selector" class="flex gap-1 text-yellow-400 text-lg cursor-pointer">
+                                    <i class="fa-solid fa-star" onclick="setSelectRating(1)"></i>
+                                    <i class="fa-solid fa-star" onclick="setSelectRating(2)"></i>
+                                    <i class="fa-solid fa-star" onclick="setSelectRating(3)"></i>
+                                    <i class="fa-solid fa-star" onclick="setSelectRating(4)"></i>
+                                    <i class="fa-solid fa-star" onclick="setSelectRating(5)"></i>
+                                </div>
+                            </div>
+                            <textarea id="review-comment-input" required rows="2" placeholder="Bagaimana pendapat Anda tentang buku ini..." class="w-full px-3 py-2 text-xs border border-slate-300 rounded-xl outline-none focus:ring-1 focus:ring-brand-600 bg-white mb-2"></textarea>
+                            <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-2 rounded-xl text-xs transition">Kirim Ulasan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOMER AUTH MODAL -->
+    <div id="user-auth-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="text-xl font-serif font-bold text-brand-900 mb-1">Masuk Akun Pembaca</h3>
+            <p class="text-xs text-slate-500 mb-4">Masuk untuk memulai Live Chat & memberikan ulasan buku.</p>
+            <form onsubmit="handleUserAuth(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Anda *</label>
+                    <input type="text" id="auth-name" required placeholder="Rina Amalia" class="w-full px-3.5 py-2 border rounded-xl text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Email / WhatsApp *</label>
+                    <input type="text" id="auth-contact" required placeholder="rina@gmail.com / 0812..." class="w-full px-3.5 py-2 border rounded-xl text-sm">
+                </div>
+                <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-2.5 rounded-xl transition text-sm mt-2">Masuk & Lanjutkan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LIVE CHAT WIDGET MODAL -->
+    <div id="chat-modal" class="fixed bottom-4 right-4 z-50 w-full max-w-sm bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden hidden flex-col transition-all">
+        <div class="bg-brand-800 p-4 text-white flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center text-white"><i class="fa-solid fa-headset text-sm"></i></div>
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 rounded-full border border-brand-800"></span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm leading-tight">Admin Graphia Labs</h4>
+                    <span class="text-[10px] text-brand-200">Online • Balas langsung</span>
+                </div>
+            </div>
+            <button onclick="closeChatModal()" class="text-white/70 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+
+        <div id="chat-messages-box" class="p-4 h-72 overflow-y-auto bg-slate-50 space-y-3 text-xs"></div>
+
+        <form onsubmit="handleSendChatMessage(event)" class="p-3 bg-white border-t border-slate-200 flex gap-2">
+            <input type="text" id="chat-input" placeholder="Tulis pesan ke admin..." required class="flex-grow px-3 py-2 bg-slate-100 rounded-xl text-xs outline-none focus:ring-1 focus:ring-brand-600">
+            <button type="submit" class="bg-brand-800 text-white px-3 py-2 rounded-xl text-xs font-bold hover:bg-brand-900 transition"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- PROOF PREVIEW MODAL -->
+    <div id="proof-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden" onclick="closeProofModal()">
+        <div class="max-w-md w-full bg-white p-4 rounded-2xl relative" onclick="event.stopPropagation()">
+            <button onclick="closeProofModal()" class="absolute top-2 right-2 text-slate-500 hover:text-slate-800 text-xl font-bold"><i class="fa-solid fa-xmark"></i></button>
+            <h4 class="font-bold text-sm text-slate-800 mb-2">Bukti Pembayaran</h4>
+            <img id="proof-modal-img" src="" class="w-full h-auto rounded-xl object-contain max-h-[70vh]">
+        </div>
+    </div>
+
+    <!-- CERTIFICATE ZOOM LIGHTBOX MODAL -->
+    <div id="cert-zoom-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md hidden" onclick="closeCertZoomModal()">
+        <div class="relative max-w-4xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex justify-between items-center text-white mb-3 px-2">
+                <h4 id="cert-zoom-title" class="font-serif font-bold text-base sm:text-lg text-amber-300">Sertifikat Graphia Labs</h4>
+                <div class="flex items-center gap-2">
+                    <button onclick="toggleCertImageScale()" id="cert-zoom-toggle-btn" class="bg-white/15 hover:bg-white/25 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> <span>Perbesar (1.5x)</span>
+                    </button>
+                    <button onclick="closeCertZoomModal()" class="bg-red-600 hover:bg-red-700 text-white w-8 h-8 rounded-lg flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="overflow-auto max-h-[78vh] w-full flex items-center justify-center rounded-2xl bg-black/40 border border-white/15 p-2">
+                <img id="cert-zoom-img" src="" onclick="toggleCertImageScale()" alt="Sertifikat Zoom" class="max-h-[74vh] w-auto object-contain rounded-xl transition-transform duration-300 cursor-zoom-in">
+            </div>
+            <p id="cert-zoom-desc" class="text-slate-200 text-xs sm:text-sm text-center mt-3 max-w-2xl bg-white/10 px-4 py-2.5 rounded-xl"></p>
+        </div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
